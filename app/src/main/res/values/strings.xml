@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">mycalculator</string>
+    <string name="TextView1">HOLA MUNDO DE CALCULADOR</string>
+    <string name="TextView2">HOLA MUNDO DE CREDITOS</string>
+    <string name="btnCredit">Creditos</string>
+    <string name="btnCalculadora">Calculadora</string>
+</resources>
