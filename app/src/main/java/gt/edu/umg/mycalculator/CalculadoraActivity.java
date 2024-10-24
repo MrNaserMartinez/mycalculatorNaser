@@ -3,7 +3,10 @@ package gt.edu.umg.mycalculator;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -14,6 +17,8 @@ public class CalculadoraActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedIntanceState) {
         super.onCreate(savedIntanceState);
         setContentView(R.layout.activity_calculadora);
+
+        Spinner spinnerintegrales = findViewById(R.id.spinner_Integrales);
 
         Button btnRegresarcalcu = findViewById(R.id.btnRegresarcalcu);
         Button btn1 = findViewById(R.id.btn1);
@@ -133,6 +138,27 @@ public class CalculadoraActivity extends AppCompatActivity {
                 txtPantalla.setText(nuevoTexto);
             }
         });
+
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.opciones_integrales, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerintegrales.setAdapter(adapter);
+
+
+        spinnerintegrales.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                String seleccion = parentView.getItemAtPosition(position).toString();
+                Toast.makeText(getApplicationContext(), "Seleccionado: " + seleccion, Toast.LENGTH_SHORT).show();
+                // Aquí puedes manejar cada opción seleccionada
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parentView) {
+                // Código cuando no se selecciona nada
+            }
+        });
+
     }
     private static class Calculadora {
         private static double valorX = 0;

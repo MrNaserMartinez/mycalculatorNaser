@@ -10,6 +10,12 @@
     <!-- Section with 2 buttons and a circle -->
 
     <!-- Middle Section (5x2 buttons) -->
+
+    <Spinner
+        android:id="@+id/spinner_Integrales"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
     <TextView
         android:id="@+id/txtPantalla"
         android:layout_width="match_parent"

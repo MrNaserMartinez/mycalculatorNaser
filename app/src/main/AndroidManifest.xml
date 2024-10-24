@@ -12,16 +12,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Mycalculator"
         tools:targetApi="31">
+
         <activity
             android:name=".MainActivity"
+            android:screenOrientation="portrait"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CalculadoraActivity" />
-        <activity android:name=".CreditosActivity" />
+
+        <activity
+            android:name=".CalculadoraActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".CreditosActivity"
+            android:screenOrientation="portrait" />
+
     </application>
 </manifest>

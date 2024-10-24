@@ -1,29 +1,30 @@
 package gt.edu.umg.mycalculator;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-
+import android.widget.ScrollView;
+import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class CreditosActivity extends AppCompatActivity {
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_creditos);
 
-        Button btnRegresar = findViewById(R.id.btnRegresar);
+        ScrollView scrollView = findViewById(R.id.scrollView);
+        TextView tvCreditos = findViewById(R.id.tvCreditos);
 
-        //configurar boton para regresar
-        btnRegresar.setOnClickListener(new View.OnClickListener() {
+        String creditosTexto = getString(R.string.creditos_texto);
+        tvCreditos.setText(creditosTexto);
+
+        scrollView.postDelayed(() -> scrollView.scrollTo(0, 0), 1000);
+
+        scrollView.post(new Runnable() {
             @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(CreditosActivity.this, MainActivity.class);
-                startActivity(intent);
-                finish();
+            public void run() {
+                scrollView.smoothScrollBy(0, 5000);
+                scrollView.postDelayed(this, 5000);
             }
         });
     }
 }
-

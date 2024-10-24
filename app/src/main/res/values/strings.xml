@@ -4,4 +4,14 @@
     <string name="TextView2">HOLA MUNDO DE CREDITOS</string>
     <string name="btnCredit">Creditos</string>
     <string name="btnCalculadora">Calculadora</string>
+    <string name="creditos_texto">
+        Fin de Créditossssssssssssssssssssss.
+    </string>
+
+    <string-array name="opciones_integrales">
+        <item>Área bajo la curva</item>
+        <item>Por partes</item>
+        <item>Masas y centroides</item>
+    </string-array>
+
 </resources>
